@@ -42,10 +42,21 @@ const AddExercisesSuccess = ({
                 </ModalWindowSpan>
               </ModalWindowText>
             </ModalWindowWrapImg>
-            <Link to="/exercises" onClick={closeModal}>
+            <div
+              onClick={() => {
+                closeModal();
+                document.body.style.overflow = 'scroll';
+              }}
+            >
               <ModalWindowBtn>Next exercise</ModalWindowBtn>
-            </Link>
-            <Link to="/" onClick={closeModal}>
+            </div>
+            <Link
+              to="/"
+              onClick={() => {
+                document.body.style.overflow = 'scroll';
+                closeModal();
+              }}
+            >
               <ModalWindowText>
                 To the diary
                 <ArrowRightIcon>

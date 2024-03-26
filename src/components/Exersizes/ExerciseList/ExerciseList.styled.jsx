@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import desktop1x from '../../../images/side-gym-desktop-tab-1x.jpg';
 import desktop2x from '../../../images/side-gym-desktop-tab-2x.jpg';
 export const ExList = styled.ul`
   display: flex;
   flex-direction: column;
-  overflow-y: ${(props) => (props.noScroll === true ? 'hidden' : 'auto')};
+  /* overflow-y: ${(props) => (props.noScroll === true ? 'hidden' : 'auto')}; */
+  overflow-y: auto;
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
@@ -12,6 +13,7 @@ export const ExList = styled.ul`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;
+    align-content: flex-start;
 
     gap: 32px 16px;
     max-width: 100%;

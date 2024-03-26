@@ -4,13 +4,13 @@ import {
   OrangCardProfile,
   Span,
   Title,
+  WrapperCard,
   WrapperContent,
   WrapperForm,
 } from './ProfilePage.styled';
 import UserForm from '../../components/UserForm/UserForm';
 import Logout from '../../components/Logout/Logout';
 import Nottice from '../../components/Nottice/Nottice';
-import { WrapperDaily } from '../../components/UserCard/UserCard.styled';
 import sprite from '../../images/sprite.svg';
 import { useGetCurrentUserQuery } from '../../redux/features/authEndpoints';
 
@@ -25,7 +25,7 @@ const ProfilePage = () => {
       <WrapperContent>
         <div>
           <UserCard name={data?.name} />
-          <WrapperDaily>
+          <WrapperCard>
             <OrangCardProfile>
               <div>
                 <svg>
@@ -34,7 +34,6 @@ const ProfilePage = () => {
                 <p>Daily calorie intake</p>
               </div>
               <Span>{countedBMR ? countedBMR : '-'}</Span>
-
             </OrangCardProfile>
             <OrangCardProfile>
               <div>
@@ -45,7 +44,7 @@ const ProfilePage = () => {
               </div>
               <Span>{countedDSN ? countedDSN : '- '} min</Span>
             </OrangCardProfile>
-          </WrapperDaily>
+          </WrapperCard>
           <Nottice />
           <Logout />
         </div>
